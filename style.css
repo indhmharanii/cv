@@ -1,0 +1,576 @@
+/* Menghilangkan style bawaan browser*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Perhitungan ukuran elemen lebih stabil */
+}
+
+/* Scroll halus saat klik menu anchor */
+html { 
+    scroll-behavior: smooth; 
+}
+
+/* BODY Style dasar seluruh halaman*/
+body {
+    font-family: 'Poppins', sans-serif; /* Font utama */
+    background: #fde8f1;                /* Background pink lembut */
+    color: #6b4350;                     /* Warna teks utama */
+}
+
+/* GLOBAL SECTION*/
+
+/* Agar section tidak tertutup navbar saat scroll */
+section { 
+    scroll-margin-top: 90px; 
+}
+
+/* Padding standar untuk setiap section CV */
+.section-cv { 
+    padding: 110px 0; 
+}
+
+/* Section dengan background kontras */
+.section-abu { 
+    background: #f7cddd; 
+}
+
+/* HEADER / HERO*/
+.header-cv {
+    min-height: 100vh;                  /* Tinggi penuh layar */
+    display: flex;                      /* Flexbox aktif */
+    align-items: center;                /* Tengah vertikal */
+    text-align: center;                 /* Teks rata tengah */
+    background: linear-gradient(
+        135deg, 
+        #f7b6cf, 
+        #fbe1ec
+    );                                  /* Gradasi background */
+}
+
+/* Foto profil utama */
+.foto-profil img {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;                 /* Foto bulat */
+    object-fit: cover;                  /* Tidak gepeng */
+    border: 5px solid #fff;             /* Border putih */
+    box-shadow: 0 0 35px rgba(217,124,158,.5);
+    margin-bottom: 20px;
+}
+
+/* Nama pemilik CV */
+.nama {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #5a3a44;
+}
+
+/* Jabatan / profesi */
+.jabatan {
+    color: #a84f73;
+    margin-bottom: 20px;
+}
+
+/* Info singkat (email, telp, dll) */
+.info-singkat span {
+    margin: 0 12px;
+    color: #7a4b5a;
+    font-size: .95rem;
+}
+
+/* Warna ikon info singkat */
+.info-singkat i { 
+    color: #d97c9e; 
+}
+
+/* Container tombol hero */
+.hero-action { 
+    margin-top: 35px; 
+}
+/*BUTTON selengkapnya */
+.btn-selengkapnya {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, #ff5fa2, #d97c9e);
+    box-shadow: 0 12px 30px rgba(217,124,158,0.45);
+    transition: all 0.35s ease;
+}
+
+/* Efek hover tombol */
+.btn-selengkapnya:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(217,124,158,0.6);
+    color: #fff;
+}
+
+
+/* NAVBAR Navigasi utama halaman */
+.navigasi-cv {
+    background: rgba(251,225,236,.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e6a9bf;
+}
+
+/* Logo navbar */
+.navigasi-cv .navbar-brand {
+    color: #c46888;
+    font-weight: 700;
+}
+
+/* Menu navbar */
+.navigasi-cv .nav-link {
+    color: #7a4b5a;
+    margin-left: 18px;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Underline animasi menu */
+.navigasi-cv .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #d97c9e;
+    transition: .3s;
+}
+
+.navigasi-cv .nav-link:hover::after { width: 100%; }
+
+
+/* ================= PROFIL ================= */
+/* Section tentang saya */
+.profil-modern {
+    background: linear-gradient(135deg, #fde8f1, #f7cddd);
+}
+
+/* Foto profil */
+.profil-foto img {
+    width: 260px;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(217,124,158,.35);
+}
+
+/* Judul profil */
+.profil-judul {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #5a3a44;
+}
+
+/* Deskripsi profil */
+.profil-deskripsi {
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+
+/* ================= TAB ================= */
+/* Menu tab profil */
+.profil-tab {
+    display: flex;
+    gap: 35px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+/* Link tab */
+.tab-link {
+    cursor: pointer;
+    color: #a35b78;
+    font-weight: 500;
+    position: relative;
+    transition: color .3s ease, transform .3s ease;
+}
+
+/* Hover tab */
+.tab-link:hover {
+    color: #c46888;
+    transform: translateY(-3px);
+}
+
+/* Tab aktif */
+.tab-link.active { color: #c46888; }
+
+/* Garis bawah tab */
+.tab-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: #d97c9e;
+    border-radius: 10px;
+    transition: .35s ease;
+    transform: translateX(-50%);
+}
+
+.tab-link:hover::after,
+.tab-link.active::after { width: 60%; }
+
+
+/* ================= TAB CONTENT ================= */
+/* Konten tab */
+.tab-content { display: none; }
+
+.tab-content.active {
+    display: block;
+    animation: fadeTab .35s ease;
+}
+
+/* Animasi tab */
+@keyframes fadeTab {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================= ITEM PROFIL ================= */
+/* Card isi profil */
+.profil-item {
+    background: #fbe1ec;
+    border-left: 4px solid #d97c9e;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 25px rgba(217,124,158,.3);
+    transition: transform .35s ease, box-shadow .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover item */
+.profil-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 18px 40px rgba(217,124,158,.45);
+}
+
+.profil-item:hover::before { left: 100%; }
+
+/* Judul item profil */
+.profil-item h5 {
+    color: #a84f73;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+
+/* ================= JUDUL SECTION ================= */
+/* Judul tiap section */
+.judul-section {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #5a3a44;
+    position: relative;
+    transition: transform .3s ease;
+}
+
+/* Hover judul */
+.judul-section:hover { transform: scale(1.03); }
+
+/* Garis bawah judul */
+.judul-section::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: #d97c9e;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 20px;
+    transition: width .35s ease;
+}
+
+.judul-section:hover::after { width: 110px; }
+
+/* ================= PORTOFOLIO ================= */
+/* Section menampilkan project / karya */
+.portfolio-section {
+    background: linear-gradient(135deg, #fde8f1, #f7cddd);
+    padding: 110px 0;
+}
+
+/* Deskripsi singkat portfolio */
+.deskripsi-portfolio {
+    max-width: 600px;
+    margin: 12px auto 0;
+    font-size: 0.95rem;
+    color: #6b4350;
+}
+
+/* Card portfolio */
+.portfolio-card {
+    background: #f6cfdd;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(217,124,158,.25);
+    transition: 0.35s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover card */
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(217,124,158,.4);
+}
+
+/* Gambar portfolio */
+.portfolio-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: 1px solid #e9a9c1;
+}
+
+/* Informasi portfolio */
+.portfolio-info {
+    padding: 18px 20px 22px;
+    flex-grow: 1;
+}
+
+/* Judul portfolio */
+.portfolio-info h4 {
+    font-weight: 600;
+    color: #5a3a44;
+    margin-bottom: 6px;
+}
+
+/* Deskripsi portfolio */
+.portfolio-info p {
+    font-size: 0.9rem;
+    color: #6b4350;
+    line-height: 1.5;
+}
+/* ================= BIDANG KEAHLIAN ================= */
+/* Section untuk menampilkan skill / kemampuan utama */
+.bidang-keahlian {
+    background: linear-gradient(135deg, #fde8f1, #f7cddd); /* Background gradasi */
+    text-align: center;                                   /* Konten rata tengah */
+}
+
+/* Deskripsi singkat bidang keahlian */
+.deskripsi-bidang {
+    max-width: 600px;     
+    margin: 10px auto 0;  
+    font-size: .95rem;    
+}
+
+/* Card tiap keahlian */
+.keahlian-card {
+    background: #f6cfdd;                          /* Warna card */
+    padding: 35px 25px;                           /* Ruang dalam */
+    border-radius: 22px;                          /* Sudut membulat */
+    box-shadow: 0 18px 40px rgba(217,124,158,.25);/* Bayangan */
+    transition: .35s;                             
+}
+
+/* Efek hover card keahlian */
+.keahlian-card:hover {
+    transform: translateY(-8px);                  /* Card naik */
+    box-shadow: 0 28px 60px rgba(217,124,158,.4); /* Bayangan lebih kuat */
+}
+
+/* Icon pada card keahlian */
+.keahlian-card i {
+    font-size: 2.2rem;    /* Ukuran icon */
+    color: #d97c9e;       /* Warna icon */
+    margin-bottom: 15px; /* Jarak bawah */
+}
+
+/* Judul keahlian */
+.keahlian-card h4 {
+    font-weight: 600;     /* Tebal judul */
+    margin-bottom: 10px;
+}
+
+/* Tombol unduh (CV / file lain) */
+.btn-unduh {
+    display: inline-block;                         /* Bisa diberi padding */
+    background: linear-gradient(90deg, #e48aa8, #d97c9e);
+    color: #fff;                                  /* Warna teks */
+    padding: 12px 28px;                           /* Ukuran tombol */
+    border-radius: 30px;                          /* Tombol rounded */
+    font-weight: 600;
+    text-decoration: none;                        /* Hilangkan underline */
+    transition: .35s;                             /* Animasi hover */
+}
+
+/* Hover tombol unduh */
+.btn-unduh:hover {
+    transform: translateY(-3px);              
+    box-shadow: 0 14px 35px rgba(217,124,158,.4);
+}
+
+
+/* ================= KONTAK ================= */
+/* Section informasi kontak */
+.kontak-modern {
+    background: linear-gradient(135deg, #fde8f1, #f7cddd);
+}
+
+/* Deskripsi singkat kontak */
+.deskripsi-kontak {
+    max-width: 600px;
+    margin: 10px auto 0;
+    font-size: .95rem;
+}
+
+/* Card informasi kontak */
+.kontak-card {
+    background: #f6cfdd;
+    padding: 35px 25px;
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(217,124,158,.25);
+    transition: .35s;
+}
+
+/* Hover card kontak */
+.kontak-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(217,124,158,.4);
+}
+
+/* Icon pada card kontak */
+.kontak-card i {
+    font-size: 2.4rem;
+    color: #d97c9e;
+    margin-bottom: 15px;
+}
+
+/* Tombol kontak (WhatsApp, Email, dll) */
+.btn-kontak {
+    display: inline-block;
+    background: linear-gradient(90deg, #e48aa8, #d97c9e);
+    color: #fff;
+    padding: 10px 26px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .35s;
+}
+
+/* Hover tombol kontak */
+.btn-kontak:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(217,124,158,.4);
+}
+
+
+/* ================= FOOTER ================= */
+/* Bagian paling bawah halaman */
+.footer-cv {
+    background: #f2b6cd;       /* Warna footer */
+    padding: 25px 0;           /* Ruang atas & bawah */
+    color: #5a3a44;            /* Warna teks */
+    border-top: 1px solid #e3a4bb;
+    text-align: center;        /* Teks rata tengah */
+}
+
+
+/* ================= RESPONSIVE HP ================= */
+/* Pengaturan khusus layar kecil (mobile) */
+@media (max-width: 576px) {
+
+    /* Padding section diperkecil */
+    .section-cv {
+        padding: 80px 20px;
+    }
+
+    /* Ukuran font dasar */
+    body { font-size: 0.95rem; }
+
+    .nama { font-size: 1.9rem; }
+
+    .jabatan { font-size: 0.95rem; }
+
+    /* Info singkat menjadi vertikal */
+    .info-singkat span {
+        display: block;
+        margin: 6px 0;
+        font-size: 0.9rem;
+    }
+
+    /* Ukuran foto profil */
+    .foto-profil img {
+        width: 135px;
+        height: 135px;
+    }
+
+    /* Layout profil jadi kolom */
+    .profil-modern .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Ukuran foto profil di section profil */
+    .profil-foto img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .profil-judul { font-size: 2rem; }
+
+    /* Deskripsi profil */
+    .profil-deskripsi {
+        font-size: 0.95rem;
+        margin: 0 auto 25px;
+    }
+
+    /* Tab profil di tengah */
+    .profil-tab {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .tab-link { font-size: 0.9rem; }
+
+    /* Tinggi gambar portfolio */
+    .portfolio-card img { height: 170px; }
+
+    /* Item profil */
+    .profil-item {
+        padding: 15px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* Card keahlian */
+    .keahlian-card { padding: 28px 20px; }
+
+    .keahlian-card h4 { font-size: 1.05rem; }
+
+    .keahlian-card p { font-size: 0.9rem; }
+
+    /* Tombol */
+    .btn-unduh,
+    .btn-kontak {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+
+    /* Card kontak */
+    .kontak-card { padding: 30px 20px; }
+
+    .kontak-card h4 { font-size: 1.05rem; }
+
+    .kontak-card p { font-size: 0.9rem; }
+
+    /* Footer */
+    .footer-cv {
+        font-size: 0.85rem;
+        padding: 20px 10px;
+    }
+}

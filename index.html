@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- ================= META & TITLE ================= -->
+    <!-- Pengaturan karakter, responsif, dan judul halaman -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Indah Maharani Husnul</title>
+
+    <!-- ================= CSS & LIBRARY ================= -->
+    <!-- File CSS utama -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap untuk layout dan komponen -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome untuk icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<!-- Bagian atas CV: foto, nama, jabatan, dan info singkat -->
+<header id="header" class="header-cv">
+    <div class="container text-center">
+
+        <!-- Foto profil -->
+        <div class="foto-profil">
+            <img src="foto_indah.jpeg" alt="Indah Maharani Husnul">
+        </div>
+
+        <!-- Nama lengkap -->
+        <h1 class="nama">Indah Maharani Husnul</h1>
+
+        <!-- Jabatan / status -->
+        <p class="jabatan">Mahasiswa Teknik Informatika</p>
+
+        <!-- Informasi singkat (email & nomor HP) -->
+        <div class="info-singkat">
+            <span><i class="fa fa-envelope"></i> husnulsyukur6@gmail.com</span>
+            <span><i class="fa fa-phone"></i> 0895-0981-6175</span>
+        </div>
+
+        <!-- Tombol menuju bagian profil -->
+        <div class="hero-action">
+            <a href="#about" class="btn-selengkapnya">Selengkapnya</a>
+        </div>
+    </div>
+</header>
+
+<!-- ================= NAVBAR ================= -->
+<!-- Menu navigasi agar mudah berpindah antar section -->
+<nav class="navbar navbar-expand-lg sticky-top navigasi-cv">
+    <div class="container">
+        <a class="navbar-brand" href="#header">Curriculum Vitae</a>
+
+        <!-- Tombol hamburger (mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuCV">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu navigasi -->
+        <div class="collapse navbar-collapse" id="menuCV">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">Profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Bidang Keahlian</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portofolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= PROFIL ================= -->
+<!-- Bagian tentang diri, data pribadi, pengalaman, pendidikan, dan keahlian -->
+<section id="about" class="profil-modern section-cv">
+<div class="container">
+<div class="row align-items-center">
+
+    <!-- Foto profil samping -->
+    <div class="col-lg-4 text-center mb-4">
+        <div class="profil-foto">
+            <img src="foto_indah.jpeg" alt="Indah Maharani Husnul">
+        </div>
+    </div>
+
+    <!-- Deskripsi profil -->
+    <div class="col-lg-8">
+        <h2 class="profil-judul">Tentang Saya</h2>
+        <p class="profil-deskripsi">
+            Saya adalah mahasiswa Teknik Informatika UIN Alauddin Makassar yang memiliki minat
+            pada teknologi, desain digital, dan pengembangan diri.
+        </p>
+
+        <!-- Menu tab profil -->
+        <div class="profil-tab">
+            <span class="tab-link active" data-tab="pribadi">Data Pribadi</span>
+            <span class="tab-link" data-tab="pengalaman">Pengalaman</span>
+            <span class="tab-link" data-tab="pendidikan">Pendidikan</span>
+            <span class="tab-link" data-tab="keahlian">Keahlian</span>
+        </div>
+
+        <!-- Isi tab -->
+        <div class="profil-content">
+
+            <!-- Data pribadi -->
+            <div class="tab-content" id="pribadi">
+                <div class="profil-item"><b>Nama:</b> Indah Maharani Husnul</div>
+                <div class="profil-item"><b>Tempat tanggal Lahir:</b> Bone, 19 Oktober 2006</div>
+                <div class="profil-item"><b>Domisili:</b> Bone, Sulawesi Selatan</div>
+            </div>
+
+            <!-- Pengalaman organisasi -->
+            <div class="tab-content" id="pengalaman">
+                <div class="profil-item"><h5>Ketua ITNASY</h5><p>MAN 1 Bone (2022–2023)</p></div>
+                <div class="profil-item"><h5>Sekertaris KIR</h5><p>MAN 1 Bone (2021–2022)</p></div>
+                <div class="profil-item"><h5>Anggota OSIM</h5><p>MAN 1 Bone (2021–2023)</p></div>
+            </div>
+
+            <!-- Riwayat pendidikan -->
+            <div class="tab-content" id="pendidikan">
+                <div class="profil-item"><h5>SD Inpres 12/79 Biru I</h5></div>
+                <div class="profil-item"><h5>MTsN 1 Bone</h5></div>
+                <div class="profil-item"><h5>MAN 1 Bone</h5><p>IPA</p></div>
+                <div class="profil-item"><h5>UIN Alauddin Makassar</h5><p>Teknik Informatika</p></div>
+            </div>
+
+            <!-- Keahlian utama -->
+            <div class="tab-content active" id="keahlian">
+                <div class="profil-item"><h5>Canva</h5><p>Desain visual</p></div>
+                <div class="profil-item"><h5>Microsoft Office</h5><p>Word & Excel</p></div>
+                <div class="profil-item"><h5>Microsoft Office</h5><p>PowerPoint</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- ================= BIDANG KEAHLIAN ================= -->
+<!-- Menampilkan kemampuan utama -->
+<section id="services" class="section-cv bidang-keahlian">
+    <div class="container text-center">
+        <h2 class="judul-section">Bidang Keahlian</h2>
+        <p class="deskripsi-bidang">Kemampuan yang mendukung aktivitas akademik dan organisasi.</p>
+
+        <div class="row justify-content-center mt-5">
+            <!-- Desain grafis -->
+            <div class="col-md-4 mb-4">
+                <div class="keahlian-card">
+                    <i class="fa fa-paint-brush"></i>
+                    <h4>Desain Grafis</h4>
+                    <p>Poster, feed Instagram, dan konten visual.</p>
+                </div>
+            </div>
+
+            <!-- Administrasi -->
+            <div class="col-md-4 mb-4">
+                <div class="keahlian-card">
+                    <i class="fa fa-laptop"></i>
+                    <h4>Administrasi</h4>
+                    <p>Pengolahan dokumen dan presentasi.</p>
+                </div>
+            </div>
+
+            <!-- Kerja tim -->
+            <div class="col-md-4 mb-4">
+                <div class="keahlian-card">
+                    <i class="fa fa-users"></i>
+                    <h4>Kerja Tim</h4>
+                    <p>Koordinasi dan komunikasi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol unduh CV -->
+        <div class="mt-5">
+            <a href="Indah_Maharani_Husnul_CV.pdf" class="btn-unduh">
+                <i class="fa fa-download"></i> Unduh CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PORTOFOLIO ================= -->
+<!-- Menampilkan hasil karya -->
+<section id="portfolio" class="section-cv portfolio-section">
+    <div class="container text-center">
+        <h2 class="judul-section">Portofolio</h2>
+        <p class="deskripsi-portfolio">Beberapa hasil karya desain dan proyek yang pernah saya kerjakan.</p>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="ig.jpeg" alt="Desain Instagram">
+                    <div class="portfolio-info">
+                        <h4>Desain Instagram</h4>
+                        <p>Desain feed & poster Instagram untuk organisasi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="website.jpeg" alt="Website Kelas">
+                    <div class="portfolio-info">
+                        <h4>Website Kelas</h4>
+                        <p>Website sederhana kelas menggunakan HTML & CSS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="portfolio-card">
+                    <img src="canva.jpeg" alt="Tugas Canva">
+                    <div class="portfolio-info">
+                        <h4>Editan Canva</h4>
+                        <p>Presentasi dan desain tugas menggunakan Canva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<!-- Informasi kontak -->
+<section id="contact" class="section-cv kontak-modern">
+    <div class="container text-center">
+        <h2 class="judul-section">Hubungi Saya</h2>
+        <p class="deskripsi-kontak">Silakan hubungi saya melalui email, WhatsApp, atau Instagram.</p>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="kontak-card">
+                    <i class="fa fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>husnulsyukur6@gmail.com</p>
+                    <a href="mailto:husnulsyukur6@gmail.com" class="btn-kontak">Kirim Email</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="kontak-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <p>0895-0981-6175</p>
+                    <a href="https://wa.me/6289509816175" target="_blank" class="btn-kontak">Chat WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="kontak-card">
+                    <i class="fab fa-instagram"></i>
+                    <h4>Instagram</h4>
+                    <p>@indhmhranii__</p>
+                    <a href="https://instagram.com/indhmhranii__" target="_blank" class="btn-kontak">Kunjungi Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- File JavaScript eksternal -->
+<script src="script.js"></script>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer-cv">
+    <p>© Indah Maharani Husnul</p>
+</footer>
+</body>
+</html>
